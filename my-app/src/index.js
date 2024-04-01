@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import DataManagementComponent from "./DataManagementComponent";
 
 class App extends React.Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class App extends React.Component {
 
     return (
       <div>
+        <DataManagementComponent />
         <form onSubmit={this.handleSubmit}>
           <br />
           <br />
