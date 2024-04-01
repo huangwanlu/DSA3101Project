@@ -1,0 +1,8 @@
+tree Main:my-app
+
+.gitignore
+README.md
+package-lock.json
+package.json
+public/
+src/
