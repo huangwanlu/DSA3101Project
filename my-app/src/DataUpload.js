@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './DataUpload.css'; 
 
 function DataUpload() {
     const [file, setFile] = useState(null);

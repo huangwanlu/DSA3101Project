@@ -1,4 +1,5 @@
 import React from 'react';
+import './ExportReport.css';  
 
 function DataExport() {
     const handleExportClick = () => {
@@ -9,7 +10,10 @@ function DataExport() {
 
     return (
         <div>
-            <button id="exportBtn" onClick={handleExportClick}>Export Data/Visualizations</button>
+            <button id="exportBtn" className="download-button" onClick={handleExportClick}>
+                <span className="icon-download"></span> {/* span for icon */}
+                Export Data/Visualizations
+            </button>
         </div>
     );
 }
