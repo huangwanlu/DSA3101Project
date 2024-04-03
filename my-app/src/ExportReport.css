@@ -14,7 +14,7 @@
 }
   
 .download-button .icon-download {
-    background-image: url('../public/exportreport-white-icon.png');
+    background-image: url('../src/exportreport-white-icon.png');
     background-size: 25px 25px;
     background-repeat: no-repeat; /* Prevents icon from repeating */
     width: 21px; 

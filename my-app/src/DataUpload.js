@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import './DataUpload.css'; 
+import Papa from 'papaparse';
 
 function DataUpload() {
     const [file, setFile] = useState(null);
 
     const handleUploadClick = () => {
         if (file) {
-            console.log('File uploaded:', file.name);
-            // Add file upload logic
-            alert('File uploaded successfully!');
+            Papa.parse(file, {
+                complete: function(results) {
+                    console.log(results.data);
+                    // `results.data` is an array of rows, each row being an array of fields
+                    // If CSV file includes headers, `results.data` will be an array of objects
+                    alert('File uploaded and processed successfully!');
+                },
+                header: true, // Set to true if your CSV has headers
+                skipEmptyLines: true, // Skips empty lines
+                dynamicTyping: true, // Automatically converts numeric and boolean data
+            });
         } else {
             console.log('No file selected for upload.');
             alert('Please select a CSV file to upload.');
         }
     };
+    
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0]);
