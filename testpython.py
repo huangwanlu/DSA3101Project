@@ -15,3 +15,4 @@ from sklearn.preprocessing import LabelEncoder
 
 data = pd.read_csv("kaggledata.csv")
 
+data.head
