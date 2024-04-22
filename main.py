@@ -13,9 +13,6 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from io import BytesIO
 
-#if uploading to a folder rmb to create the folder first
-# UPLOAD_DIR = Path() / 'uploads' #specify path to save to i think can use the normal ./smth_smth
-
 # load model from pickle file
 with open('./back/final_model.pkl', 'rb') as file:  
     model = pickle.load(file)
