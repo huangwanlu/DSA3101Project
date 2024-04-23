@@ -1,0 +1,87 @@
+.data-upload-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.file-inputs {
+    display: flex;
+    align-items: center;
+    /* If you need space between the choose file and upload button, you can add padding or margin here */
+}
+
+
+.tooltip-content ul {
+    margin-top: 10px; /* Space above the list */
+    padding-left: 20px; /* Indentation for the list */
+    list-style-type: disc; /* Style of list bullet */
+}
+
+.tooltip-content p:first-child,
+.tooltip-content p:nth-child(4) { /* Targeting the new "Columns Required" heading */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tooltip-content li {
+    line-height: 1.2; /* Adjust the line height for list items */
+}
+
+.tooltip-content {
+    position: absolute;
+    top: 20%; /* Below the '?' mark */
+    left: 65%; /* Adjust this to better center or place the tooltip */
+    transform: translateX(-50%); /* Adjust this to ensure it's centered based on your actual layout */
+    padding: 10px;
+    background: rgb(106,122,180);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Increase if necessary */
+    display: none;
+    width: max-content;
+    max-width: 300px;
+}
+
+.info-tooltip .question-mark {
+    font-size: 20px;    
+    transition: font-size 0.3s ease;
+}
+
+.info-tooltip:hover .question-mark {
+    font-size: 30px; /* Adjust the font size as needed */
+}
+
+.info-tooltip:hover .tooltip-content {
+    display: block; /* Show the tooltip when hovering */
+}
+
+input[type="file"], button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    outline: none;
+}
+input[type="file"], button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    outline: none;
+}
+
+button {
+    background-color: #4C5C96;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
