@@ -17,7 +17,7 @@ services:
 
   react:
     build:
-      context: ./react-admin
+      context: ./final-product
       dockerfile: react_Dockerfile
     expose:
       - "3000"
