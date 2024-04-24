@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+python-multipart
+#fastapi.middleware.cors
+#fastapi.staticfiles
+pathlib
+#pickle
+pandas
+#sklearn.preprocessing
+scikit-learn
+#io
+#BytesIO
