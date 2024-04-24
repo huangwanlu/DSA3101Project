@@ -129,23 +129,23 @@ const Churn = () => {
         marginRight: '8px',
     };
 
-    // // CSV Export Handler
-    // const handleExport = () => {
-    //     const csvData = churnData.map(row => 
-    //         columns.map(column => `"${row[column.field] || ''}"`).join(',')
-    //     );
-    //     const csvContent = [
-    //         columns.map(column => column.headerName).join(','), // header row
-    //         ...csvData // data rows
-    //     ].join('\n');
+    // CSV Export Handler
+    const handleExport = () => {
+        const csvData = churnData.map(row => 
+            columns.map(column => `"${row[column.field] || ''}"`).join(',')
+        );
+        const csvContent = [
+            columns.map(column => column.headerName).join(','), // header row
+            ...csvData // data rows
+        ].join('\n');
 
-    //     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    //     const link = document.createElement('a');
-    //     link.href = URL.createObjectURL(blob);
-    //     link.setAttribute('download', 'churn_data.csv');
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.setAttribute('download', 'churn_data.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     return (
@@ -184,7 +184,7 @@ const Churn = () => {
                         )}
                     </span>
                 </div>
-                {/* {dataFetched && (
+                {dataFetched && (
                     <Button
                     variant="contained"
                     onClick={handleExport}
@@ -202,7 +202,7 @@ const Churn = () => {
                     <FileDownloadOutlinedIcon style={iconStyle} />
                     Export to CSV
                   </Button>
-                )} */}
+                )}
             </div>
             {dataFetched ? (
                 <DataGrid 
@@ -217,6 +217,6 @@ const Churn = () => {
             )}
         </Box>
     );
-// };
+};
 
 export default Churn;
