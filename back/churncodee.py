@@ -1,14 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 pip install scikit-learn
-
-
-# In[3]:
-
 
 from sklearn.linear_model import LinearRegression,Ridge,Lasso,ElasticNet, LogisticRegression
 from sklearn.model_selection import train_test_split, GridSearchCV
@@ -24,31 +14,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-
-# In[4]:
-
-
 data = pd.read_csv("kaggledata.csv")
 
-
-# In[5]:
-
-
 data.head
-
-
-# In[6]:
-
 
 def label_encode_columns(df, columns):
     label_encoder = LabelEncoder()
     for col in columns:
         df[col] = label_encoder.fit_transform(df[col])
     return df
-
-
-# In[7]:
-
 
 df = pd.DataFrame(data)
 
@@ -57,28 +31,12 @@ df_encoded = label_encode_columns(df, columns_to_encode)
 
 print(df_encoded)
 
-
-# In[8]:
-
-
 features  = ['credit_score', 'country', 'gender', 'age', 'tenure', 'balance', 'products_number', 'credit_card', 'active_member', 'estimated_salary']
-
-
-# In[9]:
-
 
 X = data[features].copy()
 y = data['churn'].copy()
 
-
-# In[10]:
-
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=324)
-
-
-# In[11]:
-
 
 # Linear Regression
 reg = LinearRegression()
@@ -87,20 +45,12 @@ y_pred = reg.predict(X_test)
 print(r2_score(y_test,y_pred))
 print(mean_squared_error(y_test, y_pred))
 
-
-# In[12]:
-
-
 # Elastic Net Regression
 reg = ElasticNet(alpha=0.00001,l1_ratio=0.1)
 reg.fit(X_train,y_train)
 y_pred = reg.predict(X_test)
 print(r2_score(y_test,y_pred))
 print(mean_squared_error(y_test, y_pred))
-
-
-# In[13]:
-
 
 # Random Forest Algorithm 
 classifier = RandomForestClassifier(n_estimators=100, random_state=0)
@@ -112,15 +62,7 @@ print(mean_squared_error(y_test, y_pred))
 accuracy1 = accuracy_score(y_test, y_pred)
 results2 = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
-
-# In[14]:
-
-
 accuracy1
-
-
-# In[15]:
-
 
 # Logistic Regression Classifier
 
@@ -133,21 +75,8 @@ accuracy = accuracy_score(y_test, y_pred)
 
 results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
-
-# In[16]:
-
-
 results
-
-
-# In[17]:
-
-
 accuracy
-
-
-# In[18]:
-
 
 # Logistic Regression Classifier 
 
@@ -165,15 +94,9 @@ print("Feature ranking:")
 for f in range(X_train.shape[1]):
     print("%d. feature %s (%f)" % (f + 1, feature_names[indices[f]], coefficients[indices[f]]))
 
-
-# In[19]:
-
-
-
 classifier_rf = RandomForestClassifier(n_estimators=100, random_state=0)
 
 classifier_rf.fit(X_train, y_train)
-
 
 importances = classifier_rf.feature_importances_
 
@@ -184,10 +107,6 @@ indices = np.argsort(importances)[::-1]
 print("Feature ranking:")
 for f in range(X_train.shape[1]):
     print("%d. feature %s (%f)" % (f + 1, feature_names[indices[f]], importances[indices[f]]))
-
-
-# In[20]:
-
 
 import matplotlib.pyplot as plt
 
@@ -202,25 +121,13 @@ plt.ylabel("Importance")
 plt.tight_layout()
 plt.show()
 
-
-# In[21]:
-
-
 from sklearn.decomposition import PCA
 
 pca = PCA(n_components=7)  # Number of components to keep
 X_train_pca = pca.fit_transform(X_train)
 X_test_pca = pca.transform(X_test)
 
-
-# In[22]:
-
-
 pd.DataFrame(X_test_pca)
-
-
-# In[23]:
-
 
 from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
@@ -232,10 +139,6 @@ rfe.fit(X_train, y_train)
 selected_features = X_train.columns[rfe.support_]
 print("Selected Features:")
 print(selected_features)
-
-
-# In[ ]:
-
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
@@ -267,6 +170,3 @@ y_pred = best_model.predict(X_test)
 
 print("Accuracy Score:", accuracy_score(y_test, y_pred)) 
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-
-
-# 
