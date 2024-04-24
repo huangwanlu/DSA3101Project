@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { tokens } from "./theme";
 import Header from "./components/Header";
 import PersonOffOutlinedIcon from '@mui/icons-material/PersonOffOutlined';
-// import DataExport from './ExportReport';
+import DataExport from './ExportReport';
 import PieChart from "./components/PieChart";
 import BarChart from "./components/BarChart";
 import StatBox from "./components/Statbox";
@@ -16,7 +16,7 @@ const Dashboard = ({ dashboardRef }) => {
   const colors = tokens(theme.palette.mode);
   
   return (
-    // <DataExport>
+    <DataExport>
       <Box m="20px">
         {/* HEADER */}
         <Box display="flex" justifyContent="space-between" flexDirection="column" alignItems="flex-start">
@@ -150,7 +150,7 @@ const Dashboard = ({ dashboardRef }) => {
           </Box>
         </Box>
 
-    // </DataExport>
+    </DataExport>
   );
 }; 
 
