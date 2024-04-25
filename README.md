@@ -24,8 +24,9 @@ the churn prediction results based on their dataset.
 4) Visit "localhost:8000" on your browser to verify that our backend server is running. If no error pops up, it means it is running successfully.
 5) Visit "localhost:3000" on your browser to verify that our frontend server is running. If it is running, you should be seeing a web
 application with GXS' logo in the top left.
-6) To stop running the container, users can either stop directly on Docker desktop or in terminal by pressing "Command + C" on keyboard.
-7) To delete the containers and network created, run this command:
+   Note: It takes a while for both "localhost:3000" and "localhost:8000" to start up on web browser. Waiting time depends on individual's computer.
+7) To stop running the container, users can either stop directly on Docker desktop or in terminal by pressing "Command + C" on keyboard.
+8) To delete the containers and network created, run this command:
    ```bash
    docker-compose down
    ```
