@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# GXS Customer Churn Analysis Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)._
 
-## Available Scripts
+The design principle behind this dashboard focuses on providing high-level management executives with intuitive, data-driven insights through a clean, executive-friendly interface. This approach prioritizes clear visualizations, easy navigation, and actionable information, ensuring that decision-makers can quickly grasp key metrics and make informed choices without getting bogged down in technical details.
 
-In the project directory, you can run:
+## Overview of '/final-product' folder
 
-### `npm start`
+In the project directory, you can find the following files:
+1. `src/components/`: This folder contains code for graphs and charts on the dashboard.
+2. `src/scenes/global/`: This folder contains `Sidebar.jsx` and `Topbar.jsx` which generates the topbar and sidebar.
+3. `src/scenes/churn-prediction`: This folder contains `Churn.jsx` and `Churn.css` which generates the Churn Prediction page.
+4. `src/scenes/retention-strategies`: This folder contains `Retention.jsx` which generates the Retention Strategies page.
+5. `src/App.js`: The code sets up a React application with a flexible theme, color mode context, and routes to different components, providing a structure for a dashboard, churn predictions, and retention strategies.
+6. `src/Dashboard.jsx`: This code defines a React component, "Dashboard", that organizes and displays various data visualizations and information related to customer churn, including pie charts, bar charts, and a list of ranked churn drivers, within a interactive grid layout and with features for exporting data.
+7. `src/DownloadButton.jsx`: This code defines a `DownloadButton` React component that displays a styled button with a download icon and triggers an export function (`handleExportClick`) when clicked, allowing users to download a report.
+8. `src/ExportReport.js`: This code defines a `DataExport` React component that allows exporting the content of a referenced dashboard (`dashboardRef`) to a PDF file using `html2canvas` and `jsPDF`, with a `DownloadButton` to initiate the export.
+9. `src/index.css`, `src/index.js`: This code sets up global styles with custom scrollbars and fonts in `index.css`, and initialize a React application with routing functionality in `index.js`, rendering the main App component within a `BrowserRouter`.
+10. `src/theme.js`: This code sets up a React context for switching between light and dark themes, defines color tokens for different modes, and provides a custom Material UI theme with configurable typography, allowing users to toggle between light and dark modes with consistent styling across the application.
+11. `package-lock.json`: This file captures the exact versions of each dependency, including any sub-dependencies, to create a reproducible build environment. When someone else installs the project (e.g., using `npm install`), npm reads this file to determine which versions of dependencies to install, ensuring consistency.
+12. `package.json`: This file locks the exact versions of the dependencies and their transitive dependencies (dependencies of dependencies) at the time they were installed. It ensures that every installation is consistent, reducing the risk of "it works on my machine" issues. It is created and updated by npm when you install or update packages in your project.
+13. `react_Dockerfile`: This Dockerfile sets up a Docker image for a React application, installs dependencies, copies the necessary files, exposes port 3000, and sets the command to start the React development server.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any troubleshooting, refer to Technical Report. 
