@@ -1,13 +1,5 @@
-#pip install fastapi
-#pip install "uvicorn[standard]"
-#pip install python-multipart
-
-#IMPT! Before starting in development* server, must run the uvicorn server using "uvicorn main:app --reload" in terminal
-
 from fastapi import FastAPI, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from pathlib import Path
 import pickle
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
@@ -33,13 +25,13 @@ origins = [
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware, 
-    allow_origins=origins, #or can specify wildcard ["*"] which allows from any origin
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-#takes in a param called 'file' (rmb to match with what u call in FormData) with type UploadFile
+#takes in a param called 'file_upload' with type UploadFile
 @app.post('/uploadfile')
 async def upload_file(file_upload: UploadFile): 
     if not file_upload: 
@@ -68,13 +60,3 @@ async def upload_file(file_upload: UploadFile):
         final['gender'] = gender
         
         return(final.to_dict(orient='records'))
-    
-        # #exporting as JSON file
-        # final.to_json('./uploads/data.json', orient='records')
-        
-        # return {"filenames": file_upload.filename}
-
-# app.mount("/uploads", StaticFiles(directory="./uploads"), name="uploads")
-# @app.get("/get_data")
-# async def get_data():
-#     return {"file_path": "/uploads/data.json"}
