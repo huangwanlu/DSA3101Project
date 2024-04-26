@@ -14,19 +14,19 @@ the churn prediction results based on their dataset.
 
 ## How to Run Our Project
 
-1) Navigate to the directory where our docker-compose.yaml file is located on your computer.
+1) Navigate to the directory where our `docker-compose.yaml` file is located on your computer.
 2) Ensure Docker Desktop is up and running
 3) In your terminal, run this command:
    ```bash
    docker-compose up
    ```
    Note: It takes a while for Docker to create the container. Waiting time depends on individual's computer.
-4) Visit "localhost:8000" on your browser to verify that our backend server is running. If no error pops up, it means it is running successfully.
-5) Visit "localhost:3000" on your browser to verify that our frontend server is running. If it is running, you should be seeing a web
+4) Visit `localhost:8000` on your browser to verify that our backend server is running. If no error pops up, it means it is running successfully.
+5) Visit `localhost:3000` on your browser to verify that our frontend server is running. If it is running, you should be seeing a web
 application with GXS' logo in the top left.
 
-   Note: It takes a while for both "localhost:3000" and "localhost:8000" to start up on web browser. Waiting time depends on individual's computer.
-7) To stop running the container, users can either stop directly on Docker desktop or in terminal by pressing "Command + C" on keyboard.
+   Note: It takes a while for both `localhost:3000` and `localhost:8000` to start up on web browser. Waiting time depends on individual's computer.
+7) To stop running the container, users can either stop directly on Docker desktop or in terminal by pressing `Ctrl + C` on keyboard.
 8) To delete the containers and network created, run this command:
    ```bash
    docker-compose down
