@@ -9,7 +9,7 @@ evaluation metrics like accuracy.
 With all the results generated from our model, we displayed it on our web application, which has been designed to be user-friendly and 
 interactive. This allows users to interpret complex data more easily and enables them to seamlessly navigate through our web application.
 
-Users are able to upload their own csv files, following the instructions that are available in our "Churn Predictions" tab, to generate
+Users are able to upload their own CSV files, following the instructions that are available in our "Churn Predictions" tab, to generate
 the churn prediction results based on their dataset.
 
 ## How to Run Our Project
